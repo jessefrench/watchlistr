@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
-export default function NavBarAuth() {
+export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -16,11 +16,11 @@ export default function NavBarAuth() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link passHref href="/">
-              <Nav.Link>Home</Nav.Link>
+            <Link href="/media/new" passHref>
+              <Button>New</Button>
             </Link>
-            <Button variant="danger" onClick={signOut}>Sign Out</Button>
           </Nav>
+          <Button variant="danger" onClick={signOut}>Sign Out</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
