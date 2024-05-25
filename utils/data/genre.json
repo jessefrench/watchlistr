@@ -1,0 +1,52 @@
+{
+  "-NykYOhiA0YBOlR30SK7": {
+    "firebaseKey": "-NykYOhiA0YBOlR30SK7",
+    "name": "Action",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhjApFW5YXp7aXu": {
+    "firebaseKey": "-NykYOhjApFW5YXp7aXu",
+    "name": "Comedy",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhjApFW5YXp7aXv": {
+    "firebaseKey": "-NykYOhjApFW5YXp7aXv",
+    "name": "Drama",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhkWHWYPjqj78fv": {
+    "firebaseKey": "-NykYOhkWHWYPjqj78fv",
+    "name": "Horror",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhl4fcu6EzkCXFG": {
+    "firebaseKey": "-NykYOhl4fcu6EzkCXFG",
+    "name": "Sci-Fi",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhl4fcu6EzkCXFH": {
+    "firebaseKey": "-NykYOhl4fcu6EzkCXFH",
+    "name": "Romance",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhl4fcu6EzkCXFI": {
+    "firebaseKey": "-NykYOhl4fcu6EzkCXFI",
+    "name": "Thriller",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhmD3kCiVn5mHBU": {
+    "firebaseKey": "-NykYOhmD3kCiVn5mHBU",
+    "name": "Documentary",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhmD3kCiVn5mHBV": {
+    "firebaseKey": "-NykYOhmD3kCiVn5mHBV",
+    "name": "Fantasy",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  },
+  "-NykYOhmD3kCiVn5mHBW": {
+    "firebaseKey": "-NykYOhmD3kCiVn5mHBW",
+    "name": "Mystery",
+    "uid": "C0wunKp1sIQRM9YR48JnQPlNXt92"
+  }
+}
