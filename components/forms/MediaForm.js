@@ -46,7 +46,7 @@ export default function MediaForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updateMedia(formInput).then(() => router.push(`/media/${obj.firebaseKey}`));
+      updateMedia(formInput).then(() => router.push('/'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createMedia(payload).then(({ name }) => {

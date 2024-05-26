@@ -14,6 +14,18 @@ const getMedia = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleMedia = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/media/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
 const deleteMedia = (firebaseKey) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/media/${firebaseKey}.json`, {
     method: 'DELETE',
@@ -22,7 +34,7 @@ const deleteMedia = (firebaseKey) => new Promise((resolve, reject) => {
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve((data)))
+    .then((data) => resolve(data))
     .catch(reject);
 });
 
@@ -53,5 +65,5 @@ const updateMedia = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getMedia, deleteMedia, createMedia, updateMedia,
+  getMedia, getSingleMedia, deleteMedia, createMedia, updateMedia,
 };
