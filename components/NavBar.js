@@ -4,15 +4,15 @@ import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button,
 } from 'react-bootstrap';
-import { signOut } from '../utils/auth';
 import SearchBar from './SearchBar';
+import UserMenu from './UserMenu';
 
 export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>Watchlistr</Navbar.Brand>
+          <Navbar.Brand>WATCHLISTR</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -22,7 +22,7 @@ export default function NavBar() {
             </Link>
           </Nav>
           <SearchBar />
-          <Button variant="danger" onClick={signOut}>Sign Out</Button>
+          <UserMenu />
         </Navbar.Collapse>
       </Container>
     </Navbar>
