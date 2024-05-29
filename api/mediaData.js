@@ -64,6 +64,17 @@ const updateMedia = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const searchMedia = async (searchValue, uid) => {
+  const allMedia = await getMedia(uid);
+
+  const filteredMedia = await allMedia.filter((media) => (
+    media.name.toLowerCase().includes(searchValue)
+    || media.overview.toLowerCase().includes(searchValue)
+  ));
+
+  return filteredMedia;
+};
+
 export {
-  getMedia, getSingleMedia, deleteMedia, createMedia, updateMedia,
+  getMedia, getSingleMedia, deleteMedia, createMedia, updateMedia, searchMedia,
 };

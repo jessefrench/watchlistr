@@ -5,13 +5,14 @@ import {
   Navbar, Container, Nav, Button,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
+import SearchBar from './SearchBar';
 
 export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>watchlistr</Navbar.Brand>
+          <Navbar.Brand>Watchlistr</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -20,6 +21,7 @@ export default function NavBar() {
               <Button>New</Button>
             </Link>
           </Nav>
+          <SearchBar />
           <Button variant="danger" onClick={signOut}>Sign Out</Button>
         </Navbar.Collapse>
       </Container>
