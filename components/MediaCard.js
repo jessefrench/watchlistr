@@ -16,7 +16,7 @@ export default function MediaCard({ mediaObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={mediaObj.image_url} alt={mediaObj.name} style={{ height: '400px' }} />
       <Card.Body>
-        <Card.Title>{mediaObj.name}</Card.Title>
+        <Card.Title>{mediaObj.name} {mediaObj.watched ? '✅' : ''}</Card.Title>
         <Link href={`/media/${mediaObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">View</Button>
         </Link>
@@ -35,6 +35,7 @@ MediaCard.propTypes = {
   mediaObj: PropTypes.shape({
     image_url: PropTypes.string,
     name: PropTypes.string,
+    watched: PropTypes.bool,
     firebaseKey: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
