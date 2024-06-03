@@ -18,5 +18,10 @@ a {
 }
 
 body {
+  color: #ffffff;
   background-color: #212529;
+}
+
+.filter-btn {
+  margin: 5px;
 }

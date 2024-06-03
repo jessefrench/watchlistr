@@ -66,7 +66,6 @@ export default function MediaForm({ obj }) {
       <FloatingLabel controlId="floatingInput1" label="Title" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Enter a title"
           name="name"
           value={formInput.name}
           onChange={handleChange}
@@ -78,7 +77,6 @@ export default function MediaForm({ obj }) {
       <FloatingLabel controlId="floatingTextarea" label="Overview" className="mb-3">
         <Form.Control
           as="textarea"
-          placeholder="Overview"
           style={{ height: '100px' }}
           name="overview"
           value={formInput.overview}
@@ -88,10 +86,9 @@ export default function MediaForm({ obj }) {
       </FloatingLabel>
 
       {/* IMAGE INPUT  */}
-      <FloatingLabel controlId="floatingInput2" label="Image" className="mb-3">
+      <FloatingLabel controlId="floatingInput2" label="Image URL" className="mb-3">
         <Form.Control
           type="url"
-          placeholder="Enter an image url"
           name="image_url"
           value={formInput.image_url}
           onChange={handleChange}
