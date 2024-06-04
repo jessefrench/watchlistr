@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { useAuth } from '../../utils/context/authContext';
 import { searchMedia } from '../../api/mediaData';
 import MediaCard from '../../components/MediaCard';
@@ -22,11 +23,16 @@ export default function Search() {
   }, [searchInput, user.uid]);
 
   return (
-    <div className="d-flex flex-wrap">
-      {searchResults.length === 0
-        ? (<h1>No media found.</h1>)
-        : (searchResults.map((results) => (
-          <MediaCard key={results.firebaseKey} mediaObj={results} onUpdate={getSearchResults} />)))}
-    </div>
+    <>
+      <Head>
+        <title>WATCHLISTR | Search</title>
+      </Head>
+      <div className="d-flex flex-wrap">
+        {searchResults.length === 0
+          ? (<h1>No media found.</h1>)
+          : (searchResults.map((results) => (
+            <MediaCard key={results.firebaseKey} mediaObj={results} onUpdate={getSearchResults} />)))}
+      </div>
+    </>
   );
 }
