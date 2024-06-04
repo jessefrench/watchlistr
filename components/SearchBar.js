@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 
 export default function SearchBar() {
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState({ search: '' });
   const router = useRouter();
 
   const handleChange = (e) => {
