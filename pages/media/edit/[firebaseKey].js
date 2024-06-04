@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import MediaForm from '../../../components/forms/MediaForm';
 import { getSingleMedia } from '../../../api/mediaData';
 
@@ -12,5 +13,12 @@ export default function EditMedia() {
     getSingleMedia(firebaseKey).then(setEditItem);
   }, [firebaseKey]);
 
-  return (<MediaForm obj={editItem} />);
+  return (
+    <>
+      <Head>
+        <title>WATCHLISTR | Edit</title>
+      </Head>
+      <MediaForm obj={editItem} />
+    </>
+  );
 }
