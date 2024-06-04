@@ -1,5 +1,4 @@
 /* eslint-disable react/button-has-type */
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
@@ -18,12 +17,3 @@ export default function UserCard() {
     </Card>
   );
 }
-
-UserCard.propTypes = {
-  user: PropTypes.shape({
-    photoURL: PropTypes.string,
-    displayName: PropTypes.string,
-    email: PropTypes.string,
-    lastSignInTime: PropTypes.string,
-  }).isRequired,
-};
