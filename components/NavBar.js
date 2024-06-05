@@ -10,14 +10,14 @@ import UserMenu from './UserMenu';
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="nav">
       <Container>
         <Link passHref href="/">
           <Navbar.Brand>WATCHLISTR</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="ms-auto">
             <Link href="/media/new" passHref>
               <Button variant="secondary">New <FiEdit /></Button>
             </Link>

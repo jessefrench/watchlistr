@@ -38,15 +38,15 @@ export default function Home() {
       <Head>
         <title>WATCHLISTR</title>
       </Head>
-      <div className="text-center my-4">
-        <div className="d-grid gap-2 d-md-block">
+      <div className="home-page">
+        <div className="sidebar">
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All')}>All</Button>
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fk')}>Movies</Button>
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fl')}>TV Shows</Button>
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', true)}>Watched</Button>
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', false)}>Unwatched</Button>
         </div>
-        <div className="d-flex flex-wrap">
+        <div className="content">
           {filteredMedia.map((mediaObj) => (
             <MediaCard key={mediaObj.firebaseKey} mediaObj={mediaObj} onUpdate={getAllTheMedia} />
           ))}

@@ -53,4 +53,25 @@ body {
 
 .card-body {
   text-align: center;
+
+  .btn {
+    margin: 0 4px;
+  }
+}
+
+.nav .btn {
+  margin-right: 10px;
+}
+
+.home-page {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
 }
