@@ -40,11 +40,11 @@ export default function Home() {
       </Head>
       <div className="text-center my-4">
         <div className="d-grid gap-2 d-md-block">
-          <Button className="filter-btn" onClick={() => filterMedia('All')}>All</Button>
-          <Button className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fk')}>Movies</Button>
-          <Button className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fl')}>TV Shows</Button>
-          <Button className="filter-btn" onClick={() => filterMedia('All', true)}>Watched</Button>
-          <Button className="filter-btn" onClick={() => filterMedia('All', false)}>Unwatched</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All')}>All</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fk')}>Movies</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fl')}>TV Shows</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', true)}>Watched</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', false)}>Unwatched</Button>
         </div>
         <div className="d-flex flex-wrap">
           {filteredMedia.map((mediaObj) => (
