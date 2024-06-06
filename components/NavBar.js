@@ -19,7 +19,7 @@ export default function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Link href="/media/new" passHref>
-              <Button variant="secondary">New <FiEdit /></Button>
+              <Button className="new-btn" variant="secondary">New <FiEdit /></Button>
             </Link>
           </Nav>
           <SearchBar />

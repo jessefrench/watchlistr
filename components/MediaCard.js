@@ -17,7 +17,12 @@ export default function MediaCard({ mediaObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }} className="media-card">
+    <Card style={{ width: '18rem', margin: '10px', position: 'relative' }} className="media-card">
+      {mediaObj.watched && (
+        <div className="check-icon">
+          <FaCheckCircle />
+        </div>
+      )}
       <Card.Img
         variant="top"
         src={mediaObj.image_url}
@@ -26,9 +31,7 @@ export default function MediaCard({ mediaObj, onUpdate }) {
       />
       <div className="card-body-container">
         <Card.Body className="card-body">
-          <Card.Title>
-            {mediaObj.name} {mediaObj.watched ? <FaCheckCircle /> : ''}
-          </Card.Title>
+          <Card.Title>{mediaObj.name}</Card.Title>
           <Link href={`/media/${mediaObj.firebaseKey}`} passHref>
             <Button variant="outline-light">
               <GrFormView />
@@ -39,8 +42,8 @@ export default function MediaCard({ mediaObj, onUpdate }) {
               <CiEdit />
             </Button>
           </Link>
-          <Button variant="outline-light">
-            <MdDelete onClick={deleteThisMedia} />
+          <Button variant="outline-light" onClick={deleteThisMedia}>
+            <MdDelete />
           </Button>
         </Card.Body>
       </div>

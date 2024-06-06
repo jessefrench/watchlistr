@@ -22,6 +22,13 @@ body {
   background-color: #212529;
 }
 
+.signin-page {
+
+  img {
+    margin-bottom: 50px;
+  }
+}
+
 .filter-btn {
   margin: 5px;
   width: 125px;
@@ -30,6 +37,7 @@ body {
 .media-card {
   position: relative;
   overflow: hidden;
+  border: none;
 }
 
 .card-body-container {
@@ -59,8 +67,34 @@ body {
   }
 }
 
-.nav .btn {
+.check-icon {
+  position: absolute;
+  right: 10px;
+  color: green;
+  font-size: 24px;
+}
+
+.nav .new-btn {
   margin-right: 10px;
+}
+
+.dropdown {
+  border: none;
+
+  ::after {
+    display: none;
+  }
+
+  img {
+    border-radius: 25%;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto !important;
 }
 
 .home-page {
@@ -74,4 +108,10 @@ body {
 .content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  margin: 0;
+  max-width: 100%;
 }

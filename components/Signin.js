@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Head from 'next/head';
+import Image from 'next/image';
 import { signIn } from '../utils/auth';
 
 function Signin() {
@@ -10,7 +11,7 @@ function Signin() {
         <title>WATCHLISTR</title>
       </Head>
       <div
-        className="text-center d-flex flex-column justify-content-center align-content-center"
+        className="signin-page text-center d-flex flex-column justify-content-center align-content-center"
         style={{
           height: '90vh',
           padding: '30px',
@@ -18,10 +19,10 @@ function Signin() {
           margin: '0 auto',
         }}
       >
-        <h1>Hi there!</h1>
-        <p>Click the button below to login!</p>
-        <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-          Sign In
+        <Image src="/images/logo.png" alt="Logo" />
+        <h1>WATCHLISTR</h1>
+        <Button type="button" onClick={signIn}>
+          Sign in
         </Button>
       </div>
     </>
