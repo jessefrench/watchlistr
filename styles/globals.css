@@ -47,11 +47,6 @@ body {
 .logo {
   margin-bottom: 20px;
 }
-  
-.filter-btn {
-  margin: 5px;
-  width: 125px;
-}
 
 .media-card {
   position: relative;
@@ -94,12 +89,12 @@ body {
 }
 
 .nav {
-  margin-bottom: 20px;
+  background-color: #070e24;
 
   .nav-brand {
     font-family: "Sniglet", system-ui;
     font-weight: 800;
-    font-size: 32px;
+    font-size: 40px;
     color: #f0aedb;
   }
 
@@ -133,6 +128,12 @@ body {
 
 .sidebar {
   width: 200px;
+  padding-top: 50px;
+
+  .filter-btn {
+    margin: 5px;
+    width: 125px;
+  }
 }
 
 .content {

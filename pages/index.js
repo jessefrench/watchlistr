@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>WATCHLISTR</title>
+        <title>watchlistr</title>
       </Head>
       <div className="home-page">
         <div className="sidebar">

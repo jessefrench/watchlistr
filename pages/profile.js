@@ -6,7 +6,7 @@ export default function Profile() {
   return (
     <>
       <Head>
-        <title>WATCHLISTR | Profile</title>
+        <title>watchlistr | Profile</title>
       </Head>
       <div className="flex justify-center">
         <div className="mt-32">

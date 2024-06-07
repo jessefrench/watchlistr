@@ -10,7 +10,7 @@ import UserMenu from './UserMenu';
 
 export default function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="nav">
+    <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
       <Container>
         <Link passHref href="/">
           <Navbar.Brand className="nav-brand">watchlistr</Navbar.Brand>
