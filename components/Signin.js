@@ -15,13 +15,19 @@ function Signin() {
         style={{
           height: '90vh',
           padding: '30px',
-          maxWidth: '400px',
           margin: '0 auto',
         }}
       >
-        <Image src="/images/logo.png" alt="Logo" />
-        <h1>WATCHLISTR</h1>
-        <Button type="button" onClick={signIn}>
+        <div className="logo">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={276}
+            height={240}
+          />
+        </div>
+        <h1>watchlistr</h1>
+        <Button variant="dark" onClick={signIn}>
           Sign in
         </Button>
       </div>
