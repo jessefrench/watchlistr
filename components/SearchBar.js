@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, InputGroup } from 'react-bootstrap';
 import { useRouter } from 'next/router';
+import { CiSearch } from 'react-icons/ci';
 
 export default function SearchBar() {
   const [searchInput, setSearchInput] = useState({ search: '' });
@@ -25,17 +26,18 @@ export default function SearchBar() {
   };
 
   return (
-    <Form className="d-flex" onSubmit={handleSubmit}>
-      <Form.Control
-        type="search"
-        placeholder="Search"
-        className="me-2"
-        aria-label="Search"
-        name="search"
-        value={searchInput.search}
-        onChange={handleChange}
-      />
-      <Button variant="outline-success" type="submit">Search</Button>
+    <Form onSubmit={handleSubmit}>
+      <InputGroup>
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          name="search"
+          value={searchInput.search}
+          onChange={handleChange}
+        />
+        <Button variant="outline-secondary" type="submit"><CiSearch /></Button>
+      </InputGroup>
     </Form>
   );
 }

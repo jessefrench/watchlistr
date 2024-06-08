@@ -17,7 +17,7 @@ export default function ViewMedia() {
   return (
     <>
       <Head>
-        <title>WATCHLISTR | Details</title>
+        <title>watchlistr | Details</title>
       </Head>
       <Container>
         <Row>

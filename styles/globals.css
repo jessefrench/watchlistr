@@ -1,7 +1,7 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
 
-html,
-body {
+html, body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -19,9 +19,129 @@ a {
 
 body {
   color: #ffffff;
-  background-color: #212529;
+  background-color: #070e24;
 }
 
-.filter-btn {
-  margin: 5px;
+.signin-page {
+  align-items: center;
+
+  button {
+    width: 120px;
+    background-color: inherit;
+    border: none;
+  }
+
+  button:hover {
+    background-color: #f0aedb;
+  }
+
+  h1 {
+   font-family: "Sniglet", system-ui;
+   font-weight: 800;
+   font-size: 10vw;
+   color: #f0aedb;
+   margin-bottom: 20px;
+ }
+}
+  
+.logo {
+  margin-bottom: 20px;
+}
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.card-body-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.media-card:hover .card-body-container {
+  opacity: 1;
+}
+
+.card-body {
+  text-align: center;
+
+  .btn {
+    margin: 0 4px;
+  }
+}
+
+.check-icon {
+  position: absolute;
+  right: 10px;
+  color: green;
+  font-size: 24px;
+}
+
+.nav {
+  background-color: #070e24;
+
+  .nav-brand {
+    font-family: "Sniglet", system-ui;
+    font-weight: 800;
+    font-size: 40px;
+    color: #f0aedb;
+  }
+
+  .new-btn {
+    margin-right: 10px;
+  }
+}
+
+.dropdown {
+  border: none;
+
+  ::after {
+    display: none;
+  }
+
+  img {
+    border-radius: 25%;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto !important;
+}
+
+.home-page {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  padding-top: 50px;
+
+  .filter-btn {
+    margin: 5px;
+    width: 125px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  margin: 0;
+  max-width: 100%;
 }

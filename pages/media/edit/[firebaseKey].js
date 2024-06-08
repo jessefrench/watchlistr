@@ -16,7 +16,7 @@ export default function EditMedia() {
   return (
     <>
       <Head>
-        <title>WATCHLISTR | Edit</title>
+        <title>watchlistr | Edit</title>
       </Head>
       <MediaForm obj={editItem} />
     </>

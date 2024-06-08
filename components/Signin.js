@@ -1,27 +1,34 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Head from 'next/head';
+import Image from 'next/image';
 import { signIn } from '../utils/auth';
 
 function Signin() {
   return (
     <>
       <Head>
-        <title>WATCHLISTR</title>
+        <title>watchlistr</title>
       </Head>
       <div
-        className="text-center d-flex flex-column justify-content-center align-content-center"
+        className="signin-page text-center d-flex flex-column justify-content-center align-content-center"
         style={{
           height: '90vh',
           padding: '30px',
-          maxWidth: '400px',
           margin: '0 auto',
         }}
       >
-        <h1>Hi there!</h1>
-        <p>Click the button below to login!</p>
-        <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-          Sign In
+        <div className="logo">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={276}
+            height={240}
+          />
+        </div>
+        <h1>watchlistr</h1>
+        <Button variant="dark" onClick={signIn}>
+          Sign in
         </Button>
       </div>
     </>

@@ -6,7 +6,7 @@ export default function AddMedia() {
   return (
     <>
       <Head>
-        <title>WATCHLISTR | New</title>
+        <title>watchlistr | New</title>
       </Head>
       <MediaForm />
     </>
