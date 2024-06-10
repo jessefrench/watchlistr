@@ -32,7 +32,8 @@ body {
   }
 
   button:hover {
-    background-color: #f0aedb;
+    color: #070e24;
+    background-color: #61cbe5;
   }
 
   h1 {
