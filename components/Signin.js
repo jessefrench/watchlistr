@@ -22,8 +22,8 @@ function Signin() {
           <Image
             src="/images/logo.png"
             alt="Logo"
-            width={276}
-            height={240}
+            width={476}
+            height={440}
           />
         </div>
         <h1>watchlistr</h1>
