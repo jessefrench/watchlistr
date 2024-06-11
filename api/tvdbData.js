@@ -27,4 +27,27 @@ const fetchFromTVDB = async (endpoint) => {
   return response.json();
 };
 
-export default fetchFromTVDB;
+const getGenresFromTVDB = async () => {
+  const authToken = await getToken();
+  const response = await fetch(`${apiUrl}/genres`, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+  const { data } = await response.json();
+  return data;
+};
+
+const getTypesFromTVDB = async () => {
+  const authToken = await getToken();
+  const response = await fetch(`${apiUrl}/entities`, {
+    headers: {
+      Authorization: `Bearer ${authToken}`,
+    },
+  });
+
+  const { data } = await response.json();
+  return [data[0], data[3]];
+};
+
+export { fetchFromTVDB, getGenresFromTVDB, getTypesFromTVDB };

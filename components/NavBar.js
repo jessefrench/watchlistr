@@ -6,6 +6,7 @@ import {
   Image,
 } from 'react-bootstrap';
 import { FiEdit } from 'react-icons/fi';
+import { FaSearchPlus } from 'react-icons/fa';
 import SearchBar from './SearchBar';
 import UserMenu from './UserMenu';
 
@@ -29,7 +30,10 @@ export default function NavBar() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Link href="/media/new" passHref>
-              <Button className="new-btn" variant="secondary">New <FiEdit /></Button>
+              <Button className="nav-btn" variant="secondary">New <FiEdit /></Button>
+            </Link>
+            <Link href="/lookup" passHref>
+              <Button className="nav-btn" variant="secondary">Lookup <FaSearchPlus /></Button>
             </Link>
           </Nav>
           <SearchBar />
