@@ -1,15 +1,15 @@
-const API_KEY = '2462d11a-a860-437d-92fc-d69337c09305';
-const API_URL = 'https://api4.thetvdb.com/v4';
+const apiKey = process.env.NEXT_PUBLIC_TVDB_API_KEY;
+const apiUrl = process.env.NEXT_PUBLIC_TVDB_API_URL;
 
 const getToken = async () => {
   let token = '';
   if (!token) {
-    const response = await fetch(`${API_URL}/login`, {
+    const response = await fetch(`${apiUrl}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ apikey: API_KEY }),
+      body: JSON.stringify({ apikey: apiKey }),
     });
     const { data } = await response.json();
     token = data.token;
@@ -19,7 +19,7 @@ const getToken = async () => {
 
 const fetchFromTVDB = async (endpoint) => {
   const authToken = await getToken();
-  const response = await fetch(`${API_URL}${endpoint}`, {
+  const response = await fetch(`${apiUrl}${endpoint}`, {
     headers: {
       Authorization: `Bearer ${authToken}`,
     },
