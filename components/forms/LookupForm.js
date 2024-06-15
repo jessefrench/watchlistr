@@ -5,29 +5,29 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { createMedia, updateMedia } from '../../api/mediaData';
 import { useAuth } from '../../utils/context/authContext';
-import { fetchFromTVDB } from '../../api/tvdbData';
+// import { fetchFromTVDB } from '../../api/tvdbData';
+import fetchFromTMDB from '../../api/tmdbData';
 
 export default function LookupForm() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
+  const imagePathPrefix = 'https://image.tmdb.org/t/p/w500';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!query) return;
-    const queryResults = await fetchFromTVDB(`/search?q=${query}`);
-    setResults(queryResults.data);
+    const queryResults = await fetchFromTMDB(query);
+    setResults(queryResults.results);
   };
 
-  const handleImageClick = async (item) => {
+  const handleClick = async (item) => {
     const payload = {
+      id: item.id,
       name: item.name,
-      overview: item.overview,
-      image_url: item.image_url,
-      type_id: '',
-      genre_id: '',
-      network_id: '',
+      image_url: `${imagePathPrefix}${item.poster_path}`,
+      type: item.media_type,
       watched: false,
       uid: user.uid,
     };
@@ -56,25 +56,25 @@ export default function LookupForm() {
         <button type="submit">Search</button>
       </form>
       <ul>
-        {results.slice(0, 10).map((item) => (
+        {results.map((item) => (
           <li key={item.id}>
-            {item.image_url ? (
+            {item.poster_path ? (
               <Image
-                src={item.image_url}
+                src={`${imagePathPrefix}${item.poster_path}`}
                 alt={item.name}
                 width={300}
                 height={400}
-                onClick={() => handleImageClick(item)}
+                onClick={() => handleClick(item)}
               />
             ) : (
               <div
                 style={{ width: 300, height: 400, backgroundColor: '#ccc' }}
-                onClick={() => handleImageClick(item)}
+                onClick={() => handleClick(item)}
               >
                 No Image Available
               </div>
             )}
-            <p>{item.name} ({item.year})</p>
+            <p>{item.name}</p>
           </li>
         ))}
       </ul>
