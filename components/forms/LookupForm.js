@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { createMedia, updateMedia } from '../../api/mediaData';
 import { useAuth } from '../../utils/context/authContext';
-// import { fetchFromTVDB } from '../../api/tvdbData';
-import fetchFromTMDB from '../../api/tmdbData';
+import { searchMediaFromTMDB } from '../../api/tmdbData';
 
 export default function LookupForm() {
   const [query, setQuery] = useState('');
@@ -18,14 +17,15 @@ export default function LookupForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!query) return;
-    const queryResults = await fetchFromTMDB(query);
+    const queryResults = await searchMediaFromTMDB(query);
     setResults(queryResults.results);
   };
 
   const handleClick = async (item) => {
     const payload = {
       id: item.id,
-      name: item.name,
+      name: item.name || item.title,
+      overview: item.overview,
       image_url: `${imagePathPrefix}${item.poster_path}`,
       type: item.media_type,
       watched: false,

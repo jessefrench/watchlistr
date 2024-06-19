@@ -68,8 +68,8 @@ const searchMedia = async (searchValue, uid) => {
   const allMedia = await getMedia(uid);
 
   const filteredMedia = await allMedia.filter((media) => (
-    media.name.toLowerCase().includes(searchValue)
-    || media.overview.toLowerCase().includes(searchValue)
+    (media.name && media.name.toLowerCase().includes(searchValue.toLowerCase()))
+    || (media.overview && media.overview.toLowerCase().includes(searchValue.toLowerCase()))
   ));
 
   return filteredMedia;

@@ -19,7 +19,7 @@ export default function UserMenu() {
         <img src={user.photoURL} alt={`${user.displayName}`} />
       </Dropdown.Toggle>
       <Dropdown.Menu className="dropdown-menu rounded-lg">
-        <Dropdown.Item onClick={userProfile}>Account info</Dropdown.Item>
+        <Dropdown.Item onClick={userProfile}>Profile</Dropdown.Item>
         <Dropdown.Item onClick={signOut}>Sign out</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
