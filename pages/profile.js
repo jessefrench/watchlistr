@@ -6,12 +6,10 @@ export default function Profile() {
   return (
     <>
       <Head>
-        <title>watchlistr | Profile</title>
+        <title>Watchlistr | Profile</title>
       </Head>
-      <div className="flex justify-center">
-        <div className="mt-32">
-          <UserCard />
-        </div>
+      <div className="user-page">
+        <UserCard />
       </div>
     </>
   );

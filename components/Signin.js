@@ -8,7 +8,7 @@ function Signin() {
   return (
     <>
       <Head>
-        <title>watchlistr</title>
+        <title>Watchlistr</title>
       </Head>
       <div
         className="signin-page text-center d-flex flex-column justify-content-center align-content-center"

@@ -30,7 +30,7 @@ export default function SearchBar() {
       <InputGroup>
         <Form.Control
           type="search"
-          placeholder="Search"
+          placeholder="Search watchlist"
           aria-label="Search"
           name="search"
           value={searchInput.search}

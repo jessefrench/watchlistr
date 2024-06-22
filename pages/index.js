@@ -2,9 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Head from 'next/head';
-import { useAuth } from '../utils/context/authContext';
-import { getMedia } from '../api/mediaData';
+import { TbMovie } from 'react-icons/tb';
+import { PiTelevisionSimpleBold } from 'react-icons/pi';
+import { FaHome } from 'react-icons/fa';
+import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 import MediaCard from '../components/MediaCard';
+import { getMedia } from '../api/mediaData';
+import { useAuth } from '../utils/context/authContext';
 
 export default function Home() {
   const [media, setMedia] = useState([]);
@@ -18,10 +22,10 @@ export default function Home() {
     });
   };
 
-  const filterMedia = (typeID = 'All', watched = null) => {
+  const filterMedia = (type = 'All', watched = null) => {
     let newMedia = media;
-    if (typeID !== 'All') {
-      newMedia = newMedia.filter((mediaObj) => mediaObj.type_id === typeID);
+    if (type !== 'All') {
+      newMedia = newMedia.filter((mediaObj) => mediaObj.type === type);
     }
     if (watched !== null) {
       newMedia = newMedia.filter((mediaObj) => mediaObj.watched === watched);
@@ -36,15 +40,15 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>watchlistr</title>
+        <title>Watchlistr</title>
       </Head>
       <div className="home-page">
         <div className="sidebar">
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All')}>All</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fk')}>Movies</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('-NykRyvClr3y0a0B64Fl')}>TV Shows</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', true)}>Watched</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', false)}>Unwatched</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All')}><FaHome /> All</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('movie')}><TbMovie /> Movies</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('tv')}><PiTelevisionSimpleBold /> TV Shows</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', true)}><ImCheckboxChecked /> Watched</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', false)}><ImCheckboxUnchecked /> Unwatched</Button>
         </div>
         <div className="content">
           {filteredMedia.map((mediaObj) => (

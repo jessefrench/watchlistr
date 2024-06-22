@@ -1,11 +1,10 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button,
   Image,
 } from 'react-bootstrap';
-import { FiEdit } from 'react-icons/fi';
+import { FaSearchPlus } from 'react-icons/fa';
 import SearchBar from './SearchBar';
 import UserMenu from './UserMenu';
 
@@ -28,8 +27,8 @@ export default function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Link href="/media/new" passHref>
-              <Button className="new-btn" variant="secondary">New <FiEdit /></Button>
+            <Link href="/lookup" passHref>
+              <Button className="nav-btn" variant="secondary">Lookup <FaSearchPlus /></Button>
             </Link>
           </Nav>
           <SearchBar />

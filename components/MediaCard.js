@@ -1,28 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
 import Link from 'next/link';
-import { CiEdit } from 'react-icons/ci';
 import { GrFormView } from 'react-icons/gr';
 import { MdDelete } from 'react-icons/md';
-import { FaCheckCircle } from 'react-icons/fa';
-import { deleteMedia } from '../api/mediaData';
+import { deleteMedia, updateMedia } from '../api/mediaData';
 
 export default function MediaCard({ mediaObj, onUpdate }) {
+  const [watched, setWatched] = useState(mediaObj.watched);
+
   const deleteThisMedia = () => {
     if (window.confirm(`Delete ${mediaObj.name}?`)) {
       deleteMedia(mediaObj.firebaseKey).then(() => onUpdate());
     }
   };
 
+  const handleWatchedChange = (e) => {
+    const newWatchedStatus = e.target.checked;
+    setWatched(newWatchedStatus);
+    updateMedia({ ...mediaObj, watched: newWatchedStatus }).then(() => {
+      onUpdate();
+    });
+  };
+
   return (
     <Card style={{ width: '18rem', margin: '10px', position: 'relative' }} className="media-card">
-      {mediaObj.watched && (
-        <div className="check-icon">
-          <FaCheckCircle />
-        </div>
-      )}
+      <div className="watched-checkbox">
+        <Form.Check
+          type="checkbox"
+          id={`watched-${mediaObj.firebaseKey}`}
+          label=""
+          checked={watched}
+          onChange={handleWatchedChange}
+        />
+      </div>
       <Card.Img
         variant="top"
         src={mediaObj.image_url}
@@ -35,11 +48,6 @@ export default function MediaCard({ mediaObj, onUpdate }) {
           <Link href={`/media/${mediaObj.firebaseKey}`} passHref>
             <Button variant="outline-light">
               <GrFormView />
-            </Button>
-          </Link>
-          <Link href={`/media/edit/${mediaObj.firebaseKey}`} passHref>
-            <Button variant="outline-light">
-              <CiEdit />
             </Button>
           </Link>
           <Button variant="outline-light" onClick={deleteThisMedia}>
