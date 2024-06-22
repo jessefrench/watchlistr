@@ -25,7 +25,7 @@ export default function Search() {
   return (
     <>
       <Head>
-        <title>watchlistr | Search</title>
+        <title>Watchlistr | Search</title>
       </Head>
       <div className="d-flex flex-wrap">
         {searchResults.length === 0

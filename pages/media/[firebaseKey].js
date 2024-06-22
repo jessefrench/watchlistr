@@ -56,45 +56,47 @@ export default function ViewMedia() {
   return (
     <>
       <Head>
-        <title>watchlistr | Details</title>
+        <title>Watchlistr | Details</title>
       </Head>
-      <Container>
-        <Row>
-          <Col sm={4}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${mediaDetails.poster_path}`}
-              alt={mediaDetails.name || mediaDetails.title}
-              style={{ width: '300px' }}
-            />
+      <Container className="d-flex justify-content-center align-items-center" style={{ marginTop: '60px' }}>
+        <Row className="w-100">
+          <Col sm={4} className="d-flex justify-content-center">
+            <div className="mb-3">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${mediaDetails.poster_path}`}
+                alt={mediaDetails.name}
+                style={{ width: '400px', maxWidth: '100%', borderRadius: '6px' }}
+              />
+            </div>
           </Col>
           <Col sm={8} className="text-white">
-            <h1>{mediaDetails.name || mediaDetails.title}</h1>
-            <h6>
-              <Badge bg="secondary" className="me-1">{capitalizeFirstLetter(firebaseData.type)}</Badge>
-              <Badge bg="secondary" className="me-1">
+            <h1 className="mb-3">{mediaDetails.name || mediaDetails.title}</h1>
+            <div className="mb-3">
+              <Badge bg="secondary" className="me-2">{capitalizeFirstLetter(firebaseData.type)}</Badge>
+              <Badge bg="secondary" className="me-2">
                 {mediaDetails.genres?.map((genre) => genre.name).join(', ')}
               </Badge>
-              <Badge bg="secondary" className="me-1">{mediaDetails.status}</Badge>
-              <Badge bg="secondary" className="me-1">{streamingService}</Badge>
-              <Badge bg="secondary">{firebaseData.watched ? 'Watched ✅' : ''}</Badge>
-            </h6>
-            <p>{mediaDetails.overview || ''}</p>
+              <Badge bg="secondary" className="me-2">{mediaDetails.status}</Badge>
+              <Badge bg="secondary" className="me-2">{streamingService}</Badge>
+              <Badge bg="secondary" className="me-2">{firebaseData.watched ? 'Watched ✅' : ''}</Badge>
+            </div>
+            <p className="fs-5" style={{ marginBottom: '100px', marginRight: '40px' }}>{mediaDetails.overview || ''}</p>
             <ReactElasticCarousel breakPoints={breakPoints}>
               {castList.map((member) => (
                 <div key={member.cast_id} style={{ width: '150px', textAlign: 'center', marginRight: '10px' }}>
                   <div style={{ padding: '10px' }}>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${member.profile_path}`}
-                      alt={member.name}
-                      style={{
-                        borderRadius: '50%',
-                        height: '150px',
-                        width: '150px',
-                        objectFit: 'cover',
-                        margin: '0 auto',
-                      }}
-                    />
-                    <h5>{member.name}</h5>
+                    {member.profile_path ? (
+                      <img
+                        src={`https://image.tmdb.org/t/p/w500${member.profile_path}`}
+                        alt={member.name}
+                        className="cast-img"
+                      />
+                    ) : (
+                      <div className="placeholder-cast-img">
+                        No image available
+                      </div>
+                    )}
+                    <h6>{member.name}</h6>
                     <p>{member.character}</p>
                   </div>
                 </div>
