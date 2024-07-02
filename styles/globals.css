@@ -295,3 +295,13 @@ body {
   color: white;
   margin: 0 auto;
 }
+
+.media-form {
+  border: 1px solid white;
+}
+
+.update-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

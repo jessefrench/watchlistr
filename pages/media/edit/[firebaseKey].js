@@ -16,9 +16,11 @@ export default function EditMedia() {
   return (
     <>
       <Head>
-        <title>Watchlistr | Edit</title>
+        <title>Watchlistr | Update</title>
       </Head>
-      <MediaForm obj={editItem} />
+      <div className="update-page">
+        <MediaForm obj={editItem} />
+      </div>
     </>
   );
 }

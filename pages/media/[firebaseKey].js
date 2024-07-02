@@ -6,6 +6,7 @@ import {
 } from 'react-bootstrap';
 import Head from 'next/head';
 import ReactElasticCarousel from 'react-elastic-carousel';
+import ReactStars from 'react-stars';
 import { getSingleMedia } from '../../api/mediaData';
 import {
   getMovieCastListFromTMDB,
@@ -70,7 +71,18 @@ export default function ViewMedia() {
             </div>
           </Col>
           <Col sm={8} className="text-white">
-            <h1 className="mb-3">{mediaDetails.name || mediaDetails.title}</h1>
+            <h1>{mediaDetails.name || mediaDetails.title}</h1>
+            {firebaseData.rating ? (
+              <ReactStars
+                className="mb-2"
+                count={5}
+                size={24}
+                value={firebaseData.rating}
+                color2="#ffd700"
+                edit={false}
+              />
+            ) : ''}
+            <p>{firebaseData.comments}</p>
             <div className="mb-3">
               <Badge bg="secondary" className="me-2">{capitalizeFirstLetter(firebaseData.type)}</Badge>
               <Badge bg="secondary" className="me-2">

@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import { Button } from 'react-bootstrap';
+import ReactStars from 'react-stars';
 import { useAuth } from '../../utils/context/authContext';
 import { createMedia, updateMedia } from '../../api/mediaData';
 
 const initialState = {
   name: '',
-  overview: '',
+  comments: '',
   watched: false,
+  rating: 0,
 };
 
 export default function MediaForm({ obj }) {
@@ -23,11 +25,18 @@ export default function MediaForm({ obj }) {
   }, [obj, user]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormInput((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    if (typeof e === 'number') {
+      setFormInput((prevState) => ({
+        ...prevState,
+        rating: e,
+      }));
+    } else {
+      const { name, value } = e.target;
+      setFormInput((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -46,50 +55,53 @@ export default function MediaForm({ obj }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Media</h2>
+    <Form className="media-form d-grid gap-2" onSubmit={handleSubmit}>
+      <h2 className="text-white mt-5">Update {obj.name}</h2>
 
-      {/* TITLE INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="Title" className="mb-3">
-        <Form.Control
-          type="text"
-          name="name"
-          value={formInput.name}
-          onChange={handleChange}
-          required
+      {/* RATING INPUT */}
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+        <div style={{ marginRight: '20px' }}>
+          <span>Rating</span>
+          <ReactStars
+            count={5}
+            size={24}
+            value={formInput.rating}
+            onChange={handleChange}
+            color2="#ffd700"
+          />
+        </div>
+
+        {/* WATCHED/UNWATCHED TOGGLE */}
+        <Form.Check
+          className="text-white"
+          type="switch"
+          id="watched"
+          name="watched"
+          label="Watched?"
+          checked={formInput.watched}
+          onChange={(e) => {
+            setFormInput((prevState) => ({
+              ...prevState,
+              watched: e.target.checked,
+            }));
+          }}
         />
-      </FloatingLabel>
+      </div>
 
-      {/* OVERVIEW TEXTAREA  */}
-      <FloatingLabel controlId="floatingTextarea" label="Overview" className="mb-3">
+      {/* COMMENTS TEXTAREA */}
+      <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
         <Form.Control
           as="textarea"
           style={{ height: '100px' }}
-          name="overview"
-          value={formInput.overview}
+          name="comments"
+          value={formInput.comments}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
 
-      {/* WATCHED/UNWATCHED TOGGLE */}
-      <Form.Check
-        className="text-white mb-3"
-        type="switch"
-        id="watched"
-        name="watched"
-        label="Watched?"
-        checked={formInput.watched}
-        onChange={(e) => {
-          setFormInput((prevState) => ({
-            ...prevState,
-            watched: e.target.checked,
-          }));
-        }}
-      />
-
-      {/* SUBMIT BUTTON  */}
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Media</Button>
+      {/* SUBMIT BUTTON */}
+      <Button variant="primary" size="lg" type="submit">Submit</Button>
     </Form>
   );
 }
@@ -97,9 +109,10 @@ export default function MediaForm({ obj }) {
 MediaForm.propTypes = {
   obj: PropTypes.shape({
     name: PropTypes.string,
-    overview: PropTypes.string,
+    comments: PropTypes.string,
     watched: PropTypes.bool,
     firebaseKey: PropTypes.string,
+    rating: PropTypes.number,
   }),
 };
 
