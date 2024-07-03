@@ -25,9 +25,13 @@ export default function ViewMedia() {
   const router = useRouter();
   const { firebaseKey } = router.query;
 
-  function capitalizeFirstLetter(mediaType) {
-    if (!mediaType) return mediaType;
-    return mediaType.charAt(0).toUpperCase() + mediaType.slice(1);
+  function handleCapitalization(mediaType) {
+    if (!mediaType) {
+      return mediaType;
+    }
+    return mediaType.length > 2
+      ? mediaType.charAt(0).toUpperCase() + mediaType.slice(1)
+      : mediaType.toUpperCase();
   }
 
   useEffect(() => {
@@ -84,7 +88,7 @@ export default function ViewMedia() {
             ) : ''}
             <p>{firebaseData.comments}</p>
             <div className="mb-3">
-              <Badge bg="secondary" className="me-2">{capitalizeFirstLetter(firebaseData.type)}</Badge>
+              <Badge bg="secondary" className="me-2">{handleCapitalization(firebaseData.type)}</Badge>
               <Badge bg="secondary" className="me-2">
                 {mediaDetails.genres?.map((genre) => genre.name).join(', ')}
               </Badge>
