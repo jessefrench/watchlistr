@@ -28,7 +28,7 @@ export default function MediaCard({ mediaObj, onUpdate }) {
 
   return (
     <Card style={{ width: '18rem', margin: '10px', position: 'relative' }} className="media-card">
-      <div className="watched-checkbox">
+      <div className="watched-checkbox card-checkbox">
         <Form.Check
           type="checkbox"
           id={`watched-${mediaObj.firebaseKey}`}

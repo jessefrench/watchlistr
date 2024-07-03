@@ -55,12 +55,12 @@ export default function MediaForm({ obj }) {
   };
 
   return (
-    <Form className="media-form d-grid gap-2" onSubmit={handleSubmit}>
+    <div>
       <h2 className="text-white mt-5">Update {obj.name}</h2>
+      <Form className="media-form" onSubmit={handleSubmit}>
 
-      {/* RATING INPUT */}
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-        <div style={{ marginRight: '20px' }}>
+        {/* RATING INPUT */}
+        <div className="mb-3">
           <span>Rating</span>
           <ReactStars
             count={5}
@@ -73,8 +73,8 @@ export default function MediaForm({ obj }) {
 
         {/* WATCHED/UNWATCHED TOGGLE */}
         <Form.Check
-          className="text-white"
-          type="switch"
+          className="watched-checkbox text-white mb-3"
+          type="checkbox"
           id="watched"
           name="watched"
           label="Watched?"
@@ -86,23 +86,23 @@ export default function MediaForm({ obj }) {
             }));
           }}
         />
-      </div>
 
-      {/* COMMENTS TEXTAREA */}
-      <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
-        <Form.Control
-          as="textarea"
-          style={{ height: '100px' }}
-          name="comments"
-          value={formInput.comments}
-          onChange={handleChange}
-          required
-        />
-      </FloatingLabel>
+        {/* COMMENTS TEXTAREA  */}
+        <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
+          <Form.Control
+            as="textarea"
+            style={{ height: '100px' }}
+            name="comments"
+            value={formInput.comments}
+            onChange={handleChange}
+            required
+          />
+        </FloatingLabel>
 
-      {/* SUBMIT BUTTON */}
-      <Button variant="primary" size="lg" type="submit">Submit</Button>
-    </Form>
+        {/* SUBMIT BUTTON  */}
+        <Button type="submit">Submit</Button>
+      </Form>
+    </div>
   );
 }
 

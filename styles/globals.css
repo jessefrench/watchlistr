@@ -80,10 +80,10 @@ body {
 }
 
 .card-body .btn {
-  margin: 0 6px;
+  margin: 0 4px;
 }
 
-.watched-checkbox {
+.card-checkbox {
   position: absolute;
   top: 2px;
   right: 2px;
@@ -297,11 +297,22 @@ body {
 }
 
 .media-form {
-  border: 1px solid white;
+  width: 400px;
+  margin-top: 20px;
+
+  button {
+    background-color: green !important;
+    border: none;
+  }
+
+  button:hover {
+    background-color: darkgreen !important;
+  }
 }
 
 .update-page {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50vh;
 }
