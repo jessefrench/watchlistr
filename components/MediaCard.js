@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Link from 'next/link';
 import { GrFormView } from 'react-icons/gr';
 import { MdDelete } from 'react-icons/md';
+import { CiEdit } from 'react-icons/ci';
 import { deleteMedia, updateMedia } from '../api/mediaData';
 
 export default function MediaCard({ mediaObj, onUpdate }) {
@@ -27,7 +28,7 @@ export default function MediaCard({ mediaObj, onUpdate }) {
 
   return (
     <Card style={{ width: '18rem', margin: '10px', position: 'relative' }} className="media-card">
-      <div className="watched-checkbox">
+      <div className="watched-checkbox card-checkbox">
         <Form.Check
           type="checkbox"
           id={`watched-${mediaObj.firebaseKey}`}
@@ -48,6 +49,11 @@ export default function MediaCard({ mediaObj, onUpdate }) {
           <Link href={`/media/${mediaObj.firebaseKey}`} passHref>
             <Button variant="outline-light">
               <GrFormView />
+            </Button>
+          </Link>
+          <Link href={`/media/edit/${mediaObj.firebaseKey}`} passHref>
+            <Button variant="outline-light">
+              <CiEdit />
             </Button>
           </Link>
           <Button variant="outline-light" onClick={deleteThisMedia}>
