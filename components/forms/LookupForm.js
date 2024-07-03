@@ -72,10 +72,10 @@ export default function LookupForm() {
           <li key={item.id} className="mb-4">
             {item.poster_path ? (
               <Card className="lookup-card">
-                <Card.Img variant="left" src={`${imagePathPrefix}${item.poster_path}`} />
-                <Card.Body>
-                  <Card.Title>{item.name || item.title}</Card.Title>
-                  <Card.Text>{item.overview}</Card.Text>
+                <Card.Img className="lookup-img" variant="left" src={`${imagePathPrefix}${item.poster_path}`} />
+                <Card.Body className="lookup-body">
+                  <Card.Title className="lookup-title">{item.name || item.title}</Card.Title>
+                  <Card.Text className="lookup-text">{item.overview}</Card.Text>
                   <Button variant="secondary" onClick={() => handleClick(item)}>Add to watchlist</Button>
                 </Card.Body>
               </Card>
@@ -85,9 +85,9 @@ export default function LookupForm() {
                   <Card.Img src="/images/logo.png" alt="Logo" className="placeholder-logo" />
                   <p className="placeholder-text">No image available</p>
                 </div>
-                <Card.Body>
-                  <Card.Title>{item.name || item.title}</Card.Title>
-                  <Card.Text>{item.overview}</Card.Text>
+                <Card.Body className="lookup-body">
+                  <Card.Title className="lookup-title">{item.name || item.title}</Card.Title>
+                  <Card.Text className="lookup-text">{item.overview}</Card.Text>
                   <Button variant="secondary" onClick={() => handleClick(item)}>Add to watchlist</Button>
                 </Card.Body>
               </Card>
