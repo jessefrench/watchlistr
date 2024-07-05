@@ -179,9 +179,21 @@ body {
   background-color: #5c636a;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.details {
+  margin-top: 60px !important;
 }
 
 .cast-img {
