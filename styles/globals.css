@@ -227,10 +227,10 @@ body {
 
 .lookup-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
   width: 100%;
-  background-color: #070e24;
-  color: #ffffff;
+  background-color: #070e24 !important;
+  color: #ffffff !important;
 
   .lookup-img {
     border-radius: 6px;
