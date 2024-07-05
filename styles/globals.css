@@ -194,8 +194,8 @@ body {
   height: 20rem;
   margin: 10px;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -203,7 +203,7 @@ body {
 .user-img {
   width: 125px !important;
   height: 125px !important;
-  border-radius: 50%;
+  border-radius: 50% !important;
   object-fit: cover;
   margin: 20px auto;
   display: block;
