@@ -63,7 +63,7 @@ export default function ViewMedia() {
       <Head>
         <title>Watchlistr | Details</title>
       </Head>
-      <Container className="d-flex justify-content-center align-items-center" style={{ marginTop: '60px' }}>
+      <Container className="details d-flex justify-content-center align-items-center">
         <Row className="w-100">
           <Col sm={4} className="d-flex justify-content-center">
             <div className="mb-3">

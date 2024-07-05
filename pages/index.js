@@ -50,10 +50,12 @@ export default function Home() {
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', true)}><ImCheckboxChecked /> Watched</Button>
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', false)}><ImCheckboxUnchecked /> Unwatched</Button>
         </div>
-        <div className="content">
-          {filteredMedia.map((mediaObj) => (
-            <MediaCard key={mediaObj.firebaseKey} mediaObj={mediaObj} onUpdate={getAllTheMedia} />
-          ))}
+        <div className="wrapper">
+          <div className="content">
+            {filteredMedia.map((mediaObj) => (
+              <MediaCard key={mediaObj.firebaseKey} mediaObj={mediaObj} onUpdate={getAllTheMedia} />
+            ))}
+          </div>
         </div>
       </div>
     </>

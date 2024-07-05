@@ -18,8 +18,13 @@ a {
 }
 
 body {
-  color: #ffffff;
-  background-color: #070e24;
+  color: #ffffff !important;
+  background-color: #070e24 !important;
+}
+
+.container {
+  margin: 0 !important;
+  max-width: 100% !important;
 }
 
 .signin-page {
@@ -27,22 +32,22 @@ body {
 
   button {
     width: 120px;
-    background-color: inherit;
+    background-color: inherit !important;
     border: none;
   }
 
   button:hover {
-    color: #070e24;
-    background-color: #61cbe5;
+    color: #070e24 !important;
+    background-color: #61cbe5 !important;
   }
 
   h1 {
-   font-family: "Sniglet", system-ui;
-   font-weight: 800;
-   font-size: 8vw;
-   color: #f0aedb;
-   margin-bottom: 20px;
- }
+    font-family: "Sniglet", system-ui;
+    font-weight: 800;
+    font-size: 8vw;
+    color: #f0aedb;
+    margin-bottom: 20px;
+  }
 }
   
 .logo {
@@ -52,7 +57,7 @@ body {
 .media-card {
   position: relative;
   overflow: hidden;
-  border: none;
+  border: none !important;
 }
 
 .card-body-container {
@@ -126,7 +131,7 @@ body {
     font-family: "Sniglet", system-ui;
     font-weight: 800;
     font-size: 40px;
-    color: #f0aedb;
+    color: #f0aedb !important;
   }
 
   .nav-btn {
@@ -135,10 +140,10 @@ body {
 }
 
 .dropdown {
-  border: none;
+  border: none !important;
 
   ::after {
-    display: none;
+    display: none !important;
   }
 
   img {
@@ -174,14 +179,21 @@ body {
   background-color: #5c636a;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.container {
-  margin: 0;
-  max-width: 100%;
+.details {
+  margin-top: 60px !important;
 }
 
 .cast-img {
@@ -194,16 +206,16 @@ body {
   height: 20rem;
   margin: 10px;
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .user-img {
-  width: 125px;
-  height: 125px;
-  border-radius: 50%;
+  width: 125px !important;
+  height: 125px !important;
+  border-radius: 50% !important;
   object-fit: cover;
   margin: 20px auto;
   display: block;
@@ -227,26 +239,26 @@ body {
 
 .lookup-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
   width: 100%;
-  background-color: #070e24;
-  color: #ffffff;
+  background-color: #070e24 !important;
+  color: #ffffff !important;
 
-  img {
+  .lookup-img {
     border-radius: 6px;
     height: 300px;
     width: 200px;
   }
 
-  div {
+  .lookup-body {
     text-align: left;
 
-    div {
+    .lookup-title {
       margin-bottom: 20px;
     }
   }
 
-  p {
+  .lookup-text {
     margin-bottom: 20px;
   }
 }
