@@ -1,7 +1,7 @@
 # About the project
 Watchlistr is lightweight web app that allows people to easily keep track of the movies and shows they want to watch and where they can watch them.
 
-![image](https://github.com/user-attachments/assets/66acafda-7ba3-478d-b83e-85a8b13d20c8)
+![image](https://github.com/user-attachments/assets/996196a4-aa8b-4848-a4ad-47223222ff3c)
 
 Live link: https://jf-watchlistr.netlify.app
 
