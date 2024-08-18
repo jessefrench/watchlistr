@@ -3,7 +3,7 @@ Watchlistr is lightweight web app that allows you to easily keep track of the mo
 
 ![image](https://github.com/user-attachments/assets/996196a4-aa8b-4848-a4ad-47223222ff3c)
 
-Live link: https://jf-watchlistr.netlify.app
+Live link: https://mywatchlistr.netlify.app
 
 ## Who is the user?
 - Someone who is subscribed to many different streaming services and can't remember what content is on which platform
