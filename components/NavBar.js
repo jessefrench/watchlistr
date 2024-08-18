@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Navbar, Container, Nav, Button,
-  Image,
+  Navbar, Container, Nav, Button, Image,
 } from 'react-bootstrap';
 import { FaSearchPlus } from 'react-icons/fa';
 import SearchBar from './SearchBar';
@@ -17,9 +16,7 @@ export default function NavBar() {
             <Image
               src="/images/logo.png"
               alt="Logo"
-              width={60}
-              height={50}
-              style={{ marginRight: '10px' }}
+              className="nav-img"
             />
             watchlistr
           </Navbar.Brand>

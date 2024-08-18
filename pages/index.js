@@ -44,11 +44,21 @@ export default function Home() {
       </Head>
       <div className="home-page">
         <div className="sidebar">
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All')}><FaHome /> All</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('movie')}><TbMovie /> Movies</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('tv')}><PiTelevisionSimpleBold /> TV Shows</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', true)}><ImCheckboxChecked /> Watched</Button>
-          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', false)}><ImCheckboxUnchecked /> Unwatched</Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All')}>
+            <FaHome className="filter-btn-icons" /> All
+          </Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('movie')}>
+            <TbMovie className="filter-btn-icons" /> Movies
+          </Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('tv')}>
+            <PiTelevisionSimpleBold className="filter-btn-icons" /> TV Shows
+          </Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', true)}>
+            <ImCheckboxChecked className="filter-btn-icons" /> Watched
+          </Button>
+          <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All', false)}>
+            <ImCheckboxUnchecked className="filter-btn-icons" /> Unwatched
+          </Button>
         </div>
         <div className="wrapper">
           <div className="content">
