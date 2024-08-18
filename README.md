@@ -1,15 +1,15 @@
 # About the project
-Watchlistr is lightweight web app that allows people to easily keep track of the movies and shows they want to watch and where they can watch them.
+Watchlistr is lightweight web app that allows you to easily keep track of the movies and shows you want to watch and where you can watch them.
 
 ![image](https://github.com/user-attachments/assets/996196a4-aa8b-4848-a4ad-47223222ff3c)
 
 Live link: https://jf-watchlistr.netlify.app
 
 ## Who is the user?
-- A person who is subscribed to many different streaming services and can't remember what content is on which platform
-- A person who enjoys watching a wide variety of movies and TV shows
-- A person who maintains a large backlog of recommendations from friends and family
-- A person who watches a lot of movies or shows of the same genre and can't remember what they watched
+- Someone who is subscribed to many different streaming services and can't remember what content is on which platform
+- Someone who enjoys watching a wide variety of movies and TV shows
+- Someone who maintains a large backlog of recommendations from friends and family
+- Someone who watches a lot of movies or shows of the same genre and can't remember what they watched
 
 ## Features
 - Create, read, update, and delete media on watchlist
@@ -25,11 +25,9 @@ Live link: https://jf-watchlistr.netlify.app
 - [Project Board](https://github.com/users/jessefrench/projects/2)
 
 ## Tech Stack
-- JavaScript
 - React
 - Next.js
-- Node.js
-- CSS
 - Bootstrap
+- CSS
 - Firebase
 - TMDB API
