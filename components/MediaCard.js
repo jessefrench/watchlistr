@@ -27,7 +27,7 @@ export default function MediaCard({ mediaObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px', position: 'relative' }} className="media-card">
+    <Card className="media-card">
       <div className="watched-checkbox card-checkbox">
         <Form.Check
           type="checkbox"
@@ -41,7 +41,6 @@ export default function MediaCard({ mediaObj, onUpdate }) {
         variant="top"
         src={mediaObj.image_url}
         alt={mediaObj.name}
-        style={{ height: '400px' }}
       />
       <div className="card-body-container">
         <Card.Body className="card-body">

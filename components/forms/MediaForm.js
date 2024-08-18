@@ -91,7 +91,6 @@ export default function MediaForm({ obj }) {
         <FloatingLabel controlId="floatingTextarea" label="Comments" className="mb-3">
           <Form.Control
             as="textarea"
-            style={{ height: '100px' }}
             name="comments"
             value={formInput.comments}
             onChange={handleChange}

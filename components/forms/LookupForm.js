@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import {
-  Button, Card, Spinner,
-} from 'react-bootstrap';
+import { Button, Card, Spinner } from 'react-bootstrap';
 import { createMedia, updateMedia } from '../../api/mediaData';
 import { useAuth } from '../../utils/context/authContext';
 import { searchMediaFromTMDB } from '../../api/tmdbData';
@@ -55,7 +53,7 @@ export default function LookupForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="lookup-form d-flex mb-4" style={{ width: '35%', margin: '0 auto', textAlign: 'center' }}>
+      <form onSubmit={handleSubmit} className="lookup-form d-flex mb-4">
         <input
           type="text"
           value={query}

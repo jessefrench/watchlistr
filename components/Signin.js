@@ -4,26 +4,20 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { signIn } from '../utils/auth';
 
-function Signin() {
+export default function Signin() {
   return (
     <>
       <Head>
         <title>Watchlistr</title>
       </Head>
-      <div
-        className="signin-page text-center d-flex flex-column justify-content-center align-content-center"
-        style={{
-          height: '90vh',
-          padding: '30px',
-          margin: '0 auto',
-        }}
-      >
+      <div className="signin-page text-center d-flex flex-column justify-content-center align-content-center">
         <div className="logo">
           <Image
             src="/images/logo.png"
             alt="Logo"
             width={476}
             height={440}
+            quality={90}
           />
         </div>
         <h1>watchlistr</h1>
@@ -34,5 +28,3 @@ function Signin() {
     </>
   );
 }
-
-export default Signin;
