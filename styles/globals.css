@@ -179,31 +179,74 @@ body {
   display: flex;
 }
 
+/* Sidebar styles */
 .sidebar {
-  width: 200px;
-  padding-top: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: #070e24;
+  padding: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
 
-  .filter-btn {
-    background-color: #070e24;
-    border: none;
-    text-align: left;
-    margin: 5px;
-    width: 130px;
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Hide sidebar on small screens and show sidebar button */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
   }
 
-  .filter-btn-icons {
-    margin-right: 6px;
+  .wrapper {
+    margin-left: 0;
+  }
+
+  .sidebar-btn {
+    display: block;
   }
 }
 
-.filter-btn:hover {
-  background-color: #5c636a;
+/* Larger screens - sidebar is always open and pushes content */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0);
+    position: relative; /* Relative to the content */
+    z-index: auto; /* No overlap needed */
+  }
+
+  .wrapper {
+    margin-left: 250px; /* Shift content to make space for sidebar */
+  }
+
+  .sidebar-btn {
+    display: none; /* Hide the button on larger screens */
+  }
 }
 
 .wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
 }
 
 .content {
@@ -211,6 +254,22 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 100%;
+}
+
+.filter-btn {
+  background-color: #070e24;
+  border: none;
+  text-align: left;
+  margin: 5px;
+  width: 130px;
+}
+
+.filter-btn-icons {
+  margin-right: 6px;
+}
+
+.filter-btn:hover {
+  background-color: #5c636a;
 }
 
 .details {

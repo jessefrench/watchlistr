@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Head from 'next/head';
 import { TbMovie } from 'react-icons/tb';
 import { PiTelevisionSimpleBold } from 'react-icons/pi';
-import { FaHome } from 'react-icons/fa';
+import { FaBars, FaHome } from 'react-icons/fa';
 import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 import MediaCard from '../components/MediaCard';
 import { getMedia } from '../api/mediaData';
@@ -13,6 +13,7 @@ import { useAuth } from '../utils/context/authContext';
 export default function Home() {
   const [media, setMedia] = useState([]);
   const [filteredMedia, setFilteredMedia] = useState([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { user } = useAuth();
 
   const getAllTheMedia = () => {
@@ -33,6 +34,10 @@ export default function Home() {
     setFilteredMedia(newMedia);
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   useEffect(() => {
     getAllTheMedia();
   }, []);
@@ -43,7 +48,10 @@ export default function Home() {
         <title>Watchlistr</title>
       </Head>
       <div className="home-page">
-        <div className="sidebar">
+        <button type="button" aria-label="sidebar-btn" className="sidebar-btn" onClick={toggleSidebar}>
+          <FaBars />
+        </button>
+        <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
           <Button variant="secondary" className="filter-btn" onClick={() => filterMedia('All')}>
             <FaHome className="filter-btn-icons" /> All
           </Button>
