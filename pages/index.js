@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import { useMediaQuery } from 'react-responsive';
 import MediaCard from '../components/MediaCard';
 import { getMedia } from '../api/mediaData';
 import { useAuth } from '../utils/context/authContext';
@@ -10,7 +9,6 @@ export default function Home() {
   const [media, setMedia] = useState([]);
   const [filteredMedia, setFilteredMedia] = useState([]);
   const { user } = useAuth();
-  const isDesktop = useMediaQuery({ minWidth: 992 });
 
   const getAllTheMedia = () => {
     getMedia(user.uid).then((fetchedMedia) => {
@@ -41,7 +39,7 @@ export default function Home() {
         <title>Watchlistr</title>
       </Head>
       <div className="home-page">
-        {isDesktop && <SideBar filterMedia={filterMedia} />}
+        <SideBar filterMedia={filterMedia} />
         <div className="wrapper">
           <div className="content">
             {filteredMedia.map((mediaObj) => (
