@@ -1,18 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {
   Navbar, Container, Nav, Button, Image,
 } from 'react-bootstrap';
 import { FaSearchPlus } from 'react-icons/fa';
-import { useMediaQuery } from 'react-responsive';
 import SearchBar from './SearchBar';
 import UserMenu from './UserMenu';
-import SideBar from './SideBar';
 
-export default function NavBar({ filterMedia }) {
-  const isMobile = useMediaQuery({ maxWidth: 991 });
-
+export default function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
       <Container>
@@ -35,13 +30,8 @@ export default function NavBar({ filterMedia }) {
           </Nav>
           <SearchBar />
           <UserMenu />
-          {isMobile && <SideBar filterMedia={filterMedia} />}
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
-
-NavBar.propTypes = {
-  filterMedia: PropTypes.func.isRequired,
-};
