@@ -15,7 +15,7 @@ export default function UserMenu() {
 
   return (
     <Dropdown>
-      <Dropdown.Toggle className="dropdown border-none bg-transparent">
+      <Dropdown.Toggle className="user-dropdown border-none bg-transparent">
         <Image
           src={user.photoURL}
           alt={`${user.displayName}`}
@@ -23,7 +23,7 @@ export default function UserMenu() {
           height={35}
         />
       </Dropdown.Toggle>
-      <Dropdown.Menu className="dropdown-menu rounded-lg">
+      <Dropdown.Menu className="user-dropdown-menu rounded-lg">
         <Dropdown.Item onClick={userProfile}>Profile</Dropdown.Item>
         <Dropdown.Item onClick={signOut}>Sign out</Dropdown.Item>
       </Dropdown.Menu>
