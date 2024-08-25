@@ -9,10 +9,12 @@ export default function Home({ filteredMedia, setFilteredMedia }) {
       <Head>
         <title>Watchlistr</title>
       </Head>
-      <div className="content">
-        {filteredMedia.map((mediaObj) => (
-          <MediaCard key={mediaObj.firebaseKey} mediaObj={mediaObj} onUpdate={() => setFilteredMedia(filteredMedia)} />
-        ))}
+      <div className="wrapper">
+        <div className="media-container">
+          {filteredMedia.map((mediaObj) => (
+            <MediaCard key={mediaObj.firebaseKey} mediaObj={mediaObj} onUpdate={() => setFilteredMedia(filteredMedia)} />
+          ))}
+        </div>
       </div>
     </>
   );

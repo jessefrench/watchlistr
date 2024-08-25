@@ -2,18 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {
-  Navbar, Container, Nav, Button, Image, Dropdown,
+  Navbar, Container, Nav, Button, Image,
 } from 'react-bootstrap';
-import { FaHome, FaSearchPlus } from 'react-icons/fa';
-import { TbMovie } from 'react-icons/tb';
-import { PiTelevisionSimpleBold } from 'react-icons/pi';
-import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
+import { FaSearchPlus } from 'react-icons/fa';
 import UserMenu from './UserMenu';
 import SearchBar from './SearchBar';
+import MediaFilter from './MediaFilter';
 
 export default function NavBar({ filterMedia }) {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
+    <Navbar collapseOnSelect expand="lg" variant="dark" className="navbar">
       <Container>
         <Link passHref href="/">
           <Navbar.Brand className="nav-brand">
@@ -27,23 +25,14 @@ export default function NavBar({ filterMedia }) {
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Dropdown>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-              Filter
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item onClick={() => filterMedia('All')}><FaHome /> All</Dropdown.Item>
-              <Dropdown.Item onClick={() => filterMedia('movie')}><TbMovie /> Movies</Dropdown.Item>
-              <Dropdown.Item onClick={() => filterMedia('tv')}><PiTelevisionSimpleBold /> TV Shows</Dropdown.Item>
-              <Dropdown.Item onClick={() => filterMedia('All', true)}><ImCheckboxChecked /> Watched</Dropdown.Item>
-              <Dropdown.Item onClick={() => filterMedia('All', false)}><ImCheckboxUnchecked /> Unwatched</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Nav className="ms-auto">
-            <Link href="/lookup" passHref>
-              <Button className="nav-btn" variant="secondary">Lookup <FaSearchPlus /></Button>
-            </Link>
+          <Nav className="ms-auto me-auto">
+            <Nav.Item>
+              <MediaFilter filterMedia={filterMedia} />
+            </Nav.Item>
           </Nav>
+          <Link href="/lookup" passHref>
+            <Button className="nav-btn" variant="secondary">Lookup <FaSearchPlus /></Button>
+          </Link>
           <SearchBar />
           <UserMenu />
         </Navbar.Collapse>
