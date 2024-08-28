@@ -31,7 +31,7 @@ export default function MediaFilter({ filterMedia }) {
 
   return (
     <Dropdown>
-      <Dropdown.Toggle className="filter-dropdown-toggle">
+      <Dropdown.Toggle className="btn-transparent">
         {selectedFilter.icon} {selectedFilter.label}
       </Dropdown.Toggle>
       <Dropdown.Menu>

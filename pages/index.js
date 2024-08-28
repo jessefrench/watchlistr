@@ -21,6 +21,10 @@ export default function Home({ filteredMedia, setFilteredMedia }) {
 }
 
 Home.propTypes = {
-  filteredMedia: PropTypes.func.isRequired,
+  filteredMedia: PropTypes.arrayOf(PropTypes.shape({
+    firebaseKey: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    watched: PropTypes.bool.isRequired,
+  })).isRequired,
   setFilteredMedia: PropTypes.func.isRequired,
 };
