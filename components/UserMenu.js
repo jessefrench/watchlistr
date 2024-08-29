@@ -15,15 +15,16 @@ export default function UserMenu() {
 
   return (
     <Dropdown>
-      <Dropdown.Toggle className="dropdown border-none bg-transparent">
+      <Dropdown.Toggle className="user-dropdown-toggle" variant="link">
         <Image
           src={user.photoURL}
           alt={`${user.displayName}`}
           width={35}
           height={35}
+          className="rounded-circle"
         />
       </Dropdown.Toggle>
-      <Dropdown.Menu className="dropdown-menu rounded-lg">
+      <Dropdown.Menu className="user-dropdown-menu">
         <Dropdown.Item onClick={userProfile}>Profile</Dropdown.Item>
         <Dropdown.Item onClick={signOut}>Sign out</Dropdown.Item>
       </Dropdown.Menu>
