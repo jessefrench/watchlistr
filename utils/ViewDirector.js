@@ -31,12 +31,12 @@ export default function ViewDirectorBasedOnUserAuthStatus({ component: Component
     setFilteredMedia(newMedia);
   };
 
-  // If user state is null, then show loader
+  // if user state is null then show loader
   if (userLoading) {
     return <Loading />;
   }
 
-  // What the user should see if they are logged in
+  // what the user should see if they are logged in
   if (user) {
     return (
       <>

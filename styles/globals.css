@@ -77,17 +77,17 @@ body {
 .btn-transparent {
   color: inherit;
   background-color: transparent !important;
-  border: none;
+  border: none !important;
 }
 
 .btn-inline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .btn-inline svg {
-  margin-right: 0.5rem;
+  margin-right: 0.5rem !important;
 }
 
 .btn-transparent:hover,
@@ -95,7 +95,7 @@ body {
 .btn-transparent:active {
   color: inherit;
   background-color: transparent !important;
-  border: none;
+  border: none !important;
 }
 
 .dropdown-menu {
