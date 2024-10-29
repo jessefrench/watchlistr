@@ -63,7 +63,7 @@ body {
 }
 
 .navbar {
-  padding: 0 12px;
+  padding: 0 12px !important;
 }
 
 .nav-img {
