@@ -18,7 +18,7 @@ export default function ViewDirectorBasedOnUserAuthStatus({ component: Component
         setFilteredMedia(fetchedMedia);
       });
     }
-  }, [user]);
+  }, [media, user]);
 
   const filterMedia = (type = 'All', watched = null) => {
     let newMedia = media;
