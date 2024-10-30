@@ -1,9 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import MediaCard from '../components/MediaCard';
+import { getMedia } from '../api/mediaData';
+import { useAuth } from '../utils/context/authContext';
+import MediaFilter from '../components/MediaFilter';
 
-export default function Home({ filteredMedia, setFilteredMedia }) {
+export default function Home() {
+  const { user } = useAuth();
+  const [media, setMedia] = useState([]);
+  const [filteredMedia, setFilteredMedia] = useState([]);
+
+  useEffect(() => {
+    if (user) {
+      getMedia(user.uid).then((fetchedMedia) => {
+        setMedia(fetchedMedia);
+        setFilteredMedia(fetchedMedia);
+      });
+    }
+  }, [user]);
+
+  const filterMedia = (type = 'All', watched = null) => {
+    let newMedia = media;
+    if (type !== 'All') {
+      newMedia = newMedia.filter((mediaObj) => mediaObj.type === type);
+    }
+    if (watched !== null) {
+      newMedia = newMedia.filter((mediaObj) => mediaObj.watched === watched);
+    }
+    setFilteredMedia(newMedia);
+  };
+
+  const onUpdate = (deletedKey) => {
+    const updatedMedia = media.filter((item) => item.firebaseKey !== deletedKey);
+    setMedia(updatedMedia);
+    setFilteredMedia(updatedMedia);
+  };
+
   return (
     <>
       <Head>
@@ -13,22 +45,16 @@ export default function Home({ filteredMedia, setFilteredMedia }) {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
+      <div className="filter-container">
+        <MediaFilter filterMedia={filterMedia} />
+      </div>
       <div className="wrapper">
         <div className="media-container">
           {filteredMedia.map((mediaObj) => (
-            <MediaCard key={mediaObj.firebaseKey} mediaObj={mediaObj} onUpdate={() => setFilteredMedia(filteredMedia)} />
+            <MediaCard key={mediaObj.firebaseKey} mediaObj={mediaObj} onUpdate={onUpdate} />
           ))}
         </div>
       </div>
     </>
   );
 }
-
-Home.propTypes = {
-  filteredMedia: PropTypes.arrayOf(PropTypes.shape({
-    firebaseKey: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    watched: PropTypes.bool.isRequired,
-  })).isRequired,
-  setFilteredMedia: PropTypes.func.isRequired,
-};

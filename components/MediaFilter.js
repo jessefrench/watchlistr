@@ -6,15 +6,9 @@ import { FaHome } from 'react-icons/fa';
 import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 import { PiTelevisionSimpleBold } from 'react-icons/pi';
 import { TbMovie } from 'react-icons/tb';
-import { useRouter } from 'next/router';
 
 export default function MediaFilter({ filterMedia }) {
   const [selectedFilter, setSelectedFilter] = useState({ label: 'Filter', icon: null });
-  const router = useRouter();
-
-  if (router.pathname !== '/') {
-    return null;
-  }
 
   const filters = [
     { label: 'All', icon: <FaHome />, type: 'All' },
