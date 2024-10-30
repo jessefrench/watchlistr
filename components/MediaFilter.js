@@ -26,7 +26,8 @@ export default function MediaFilter({ filterMedia }) {
   return (
     <Dropdown>
       <Dropdown.Toggle className="btn-transparent">
-        {selectedFilter.icon} {selectedFilter.label}
+        <span className="me-2">{selectedFilter.icon}</span>
+        <span>{selectedFilter.label}</span>
       </Dropdown.Toggle>
       <Dropdown.Menu>
         {filters.map((filter) => (
@@ -34,7 +35,8 @@ export default function MediaFilter({ filterMedia }) {
             key={filter.label}
             onClick={() => handleSelect(filter)}
           >
-            {filter.icon} {filter.label}
+            <span className="me-2">{filter.icon}</span>
+            <span>{filter.label}</span>
           </Dropdown.Item>
         ))}
       </Dropdown.Menu>
