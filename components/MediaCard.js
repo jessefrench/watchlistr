@@ -14,7 +14,7 @@ export default function MediaCard({ mediaObj, onUpdate }) {
 
   const deleteThisMedia = () => {
     if (window.confirm(`Delete ${mediaObj.name}?`)) {
-      deleteMedia(mediaObj.firebaseKey).then(() => onUpdate());
+      deleteMedia(mediaObj.firebaseKey).then(() => onUpdate(mediaObj.firebaseKey));
     }
   };
 

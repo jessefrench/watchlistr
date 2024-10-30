@@ -237,6 +237,11 @@ body {
   transform: rotate(45deg);
 }
 
+.filter-container {
+  display: flex;
+  justify-content: center;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
