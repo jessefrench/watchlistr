@@ -79,6 +79,24 @@ body {
   color: #f0aedb !important;
 }
 
+.nav-button {
+  height: 38px;
+  font-size: 1rem;
+}
+
+@media (max-width: 375px) {
+  .nav-button {
+    font-size: 0.92rem;
+    width: 80px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-button {
+    font-size: 0.76rem;
+  }
+}
+
 @media (max-width: 320px) {
   .nav-title {
     font-size: 26px;
@@ -129,23 +147,6 @@ body {
 .user-dropdown-menu {
   right: 0 !important;
   left: auto !important;
-}
-
-@media (max-width: 768px) {
-  .nav-elements {
-    flex-direction: row !important;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .navbar-collapse {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-brand {
-    margin-bottom: 0.5rem;
-  }
 }
 
 .media-card {

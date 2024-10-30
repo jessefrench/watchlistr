@@ -19,9 +19,9 @@ export default function UserMenu() {
         <Image
           src={user.photoURL}
           alt={`${user.displayName}`}
-          width={35}
-          height={35}
-          className="rounded-circle"
+          width={38}
+          height={38}
+          className="rounded"
         />
       </Dropdown.Toggle>
       <Dropdown.Menu className="user-dropdown-menu">

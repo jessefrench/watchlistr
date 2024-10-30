@@ -23,9 +23,9 @@ export default function NavBar() {
         </Link>
         <Navbar.Toggle aria-controls="navbarResponsive" />
         <Navbar.Collapse id="navbarResponsive">
-          <Nav className="ms-auto d-flex align-items-center flex-row nav-elements">
+          <Nav className="ms-auto d-flex justify-content-center align-items-center flex-row nav-elements">
             <Link href="/lookup" passHref>
-              <Button className="btn-transparent btn-inline">
+              <Button variant="secondary" className="nav-button me-2">
                 <FaSearchPlus /> New
               </Button>
             </Link>
