@@ -25,7 +25,7 @@ export default function NavBar() {
         <Navbar.Collapse id="navbarResponsive">
           <Nav className="ms-auto d-flex align-items-center flex-row nav-elements">
             <Link href="/lookup" passHref>
-              <Button className="btn-transparent btn-inline">
+              <Button variant="secondary" className="me-2">
                 <FaSearchPlus /> New
               </Button>
             </Link>

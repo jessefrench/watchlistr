@@ -36,7 +36,7 @@ export default function SearchBar() {
           value={searchInput.search}
           onChange={handleChange}
         />
-        <Button variant="outline-secondary" type="submit"><CiSearch /></Button>
+        <Button variant="secondary" type="submit"><CiSearch /></Button>
       </InputGroup>
     </Form>
   );

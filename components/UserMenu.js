@@ -21,7 +21,7 @@ export default function UserMenu() {
           alt={`${user.displayName}`}
           width={35}
           height={35}
-          className="rounded-circle"
+          className="rounded"
         />
       </Dropdown.Toggle>
       <Dropdown.Menu className="user-dropdown-menu">
