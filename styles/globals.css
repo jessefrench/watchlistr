@@ -148,6 +148,38 @@ body {
   }
 }
 
+.search-input {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.search-input:focus {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  box-shadow: none;
+}
+
+.search-input::placeholder {
+  color: #fff;
+}
+
+.search-button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.search-button:hover,
+.search-button:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-color: #fff;
+}
+
 .media-card {
   position: relative;
   overflow: hidden;
