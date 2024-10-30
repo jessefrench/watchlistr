@@ -20,9 +20,10 @@ export default function MediaCard({ mediaObj, onUpdate }) {
 
   const handleWatchedChange = (e) => {
     const newWatchedStatus = e.target.checked;
+    const updatedItem = { ...mediaObj, watched: newWatchedStatus };
     setWatched(newWatchedStatus);
-    updateMedia({ ...mediaObj, watched: newWatchedStatus }).then(() => {
-      onUpdate();
+    updateMedia(updatedItem).then(() => {
+      onUpdate(updatedItem);
     });
   };
 

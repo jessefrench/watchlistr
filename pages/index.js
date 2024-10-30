@@ -9,6 +9,7 @@ export default function Home() {
   const { user } = useAuth();
   const [media, setMedia] = useState([]);
   const [filteredMedia, setFilteredMedia] = useState([]);
+  const [filterSettings, setFilterSettings] = useState({ type: 'All', watched: null });
 
   useEffect(() => {
     if (user) {
@@ -20,6 +21,7 @@ export default function Home() {
   }, [user]);
 
   const filterMedia = (type = 'All', watched = null) => {
+    setFilterSettings({ type, watched });
     let newMedia = media;
     if (type !== 'All') {
       newMedia = newMedia.filter((mediaObj) => mediaObj.type === type);
@@ -30,10 +32,11 @@ export default function Home() {
     setFilteredMedia(newMedia);
   };
 
-  const onUpdate = (deletedKey) => {
-    const updatedMedia = media.filter((item) => item.firebaseKey !== deletedKey);
+  const onUpdate = (updatedItem) => {
+    const updatedMedia = media.map((item) => (item.firebaseKey === updatedItem.firebaseKey ? updatedItem : item));
     setMedia(updatedMedia);
-    setFilteredMedia(updatedMedia);
+    const { type, watched } = filterSettings;
+    filterMedia(type, watched);
   };
 
   return (
