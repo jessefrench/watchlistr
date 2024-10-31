@@ -32,11 +32,25 @@ export default function Home() {
     setFilteredMedia(newMedia);
   };
 
-  const onUpdate = (updatedItem) => {
-    const updatedMedia = media.map((item) => (item.firebaseKey === updatedItem.firebaseKey ? updatedItem : item));
-    setMedia(updatedMedia);
-    const { type, watched } = filterSettings;
-    filterMedia(type, watched);
+  const onUpdate = (item) => {
+    if (typeof item === 'string') {
+      const updatedMedia = media.filter((mediaItem) => mediaItem.firebaseKey !== item);
+      setMedia(updatedMedia);
+      const { type, watched } = filterSettings;
+      let newFilteredMedia = updatedMedia;
+      if (type !== 'All') {
+        newFilteredMedia = newFilteredMedia.filter((mediaObj) => mediaObj.type === type);
+      }
+      if (watched !== null) {
+        newFilteredMedia = newFilteredMedia.filter((mediaObj) => mediaObj.watched === watched);
+      }
+      setFilteredMedia(newFilteredMedia);
+    } else {
+      const updatedMedia = media.map((mediaItem) => (mediaItem.firebaseKey === item.firebaseKey ? item : mediaItem));
+      setMedia(updatedMedia);
+      const { type, watched } = filterSettings;
+      filterMedia(type, watched);
+    }
   };
 
   return (
