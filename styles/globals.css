@@ -193,10 +193,6 @@ body {
   opacity: 1;
 }
 
-.media-card.active .card-body-container {
-  opacity: 1;
-}
-
 .card-body {
   text-align: center;
 }
