@@ -292,6 +292,8 @@ body {
   background-color: gray;
   color: white;
   margin: 0 auto;
+  height: 150px;
+  width: 150px;
 }
 
 .user-card {
