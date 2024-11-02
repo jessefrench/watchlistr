@@ -52,7 +52,7 @@ body {
   h1 {
     font-family: "Sniglet", system-ui;
     font-weight: 800;
-    font-size: 8vw;
+    font-size: 14vw;
     color: #f0aedb;
     margin-bottom: 20px;
   }
@@ -81,25 +81,24 @@ body {
 
 .nav-button {
   height: 38px;
-  font-size: 1rem;
+  width: 25%;
+  font-size: 100%;
 }
 
 @media (max-width: 375px) {
   .nav-button {
-    font-size: 0.92rem;
-    width: 80px;
+    font-size: 90%;
   }
 }
 
-@media (max-width: 320px) {
-  .nav-button {
-    font-size: 0.76rem;
-  }
-}
-
-@media (max-width: 320px) {
+@media (max-width: 352px) {
   .nav-title {
     font-size: 26px;
+  }
+
+  .nav-button {
+    font-size: 75%;
+    padding: 8px 0;
   }
 }
 
@@ -269,16 +268,34 @@ body {
 }
 
 .details {
-  margin-top: 60px !important;
+  margin-top: 20px !important;
+}
+
+.placeholder-poster {
+  width: 300px;
+  height: 500px;
+  background-color: gray;
+  border-radius: 0.25rem;
 }
 
 .cast-img {
-  border-radius: '50%';
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.placeholder-cast-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: gray;
+  color: white;
   margin: 0 auto;
 }
 
 .user-card {
-  width: 28rem;
+  width: 22rem;
   height: 20rem;
   margin: 10px;
   backdrop-filter: blur(10px);
@@ -386,28 +403,7 @@ body {
   }
 }
 
-.cast-img {
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  margin: 0 auto;
-}
-
-.placeholder-cast-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  background-color: gray;
-  color: white;
-  margin: 0 auto;
-}
-
 .media-form {
-  width: 400px;
   margin-top: 20px;
 
   button {

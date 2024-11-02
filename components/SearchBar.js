@@ -17,12 +17,12 @@ export default function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (searchInput !== '') {
+    if (searchInput.search !== '') {
       router.push(`/search/${searchInput.search}`);
     } else {
       router.push('/');
     }
-    setSearchInput('');
+    setSearchInput({ search: '' });
   };
 
   return (
@@ -33,7 +33,7 @@ export default function SearchBar() {
           placeholder="Search watchlist"
           aria-label="Search"
           name="search"
-          value={searchInput.search}
+          value={searchInput.search || ''}
           onChange={handleChange}
         />
         <Button variant="secondary" type="submit"><CiSearch /></Button>
