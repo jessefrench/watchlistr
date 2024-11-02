@@ -52,7 +52,7 @@ body {
   h1 {
     font-family: "Sniglet", system-ui;
     font-weight: 800;
-    font-size: 8vw;
+    font-size: 14vw;
     color: #f0aedb;
     margin-bottom: 20px;
   }
@@ -190,6 +190,10 @@ body {
 }
 
 .media-card:hover .card-body-container {
+  opacity: 1;
+}
+
+.media-card.active .card-body-container {
   opacity: 1;
 }
 

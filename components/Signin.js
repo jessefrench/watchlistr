@@ -17,7 +17,7 @@ export default function Signin() {
             alt="Logo"
             width={476}
             height={440}
-            quality={90}
+            priority
           />
         </div>
         <h1>watchlistr</h1>

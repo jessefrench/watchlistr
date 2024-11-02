@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -26,6 +26,26 @@ export default function MediaCard({ mediaObj, onUpdate }) {
       onUpdate(updatedItem);
     });
   };
+
+  const handleTouchStart = (e) => {
+    const mediaCard = e.currentTarget;
+    mediaCard.classList.add('active');
+
+    const handleTouchEnd = () => {
+      mediaCard.classList.remove('active');
+      mediaCard.removeEventListener('touchend', handleTouchEnd);
+    };
+
+    mediaCard.addEventListener('touchend', handleTouchEnd);
+  };
+
+  useEffect(() => {
+    const mediaCardElement = document.querySelector('.media-card');
+    mediaCardElement.addEventListener('touchstart', handleTouchStart);
+    return () => {
+      mediaCardElement.removeEventListener('touchstart', handleTouchStart);
+    };
+  }, []);
 
   return (
     <Card className="media-card">
