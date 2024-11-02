@@ -27,7 +27,7 @@ export default function Search() {
       <Head>
         <title>Watchlistr | Search</title>
       </Head>
-      <div className="d-flex flex-wrap">
+      <div className="mt-3 d-flex flex-wrap">
         {searchResults.length === 0
           ? (<h1>No media found.</h1>)
           : (searchResults.map((results) => (
