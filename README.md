@@ -1,7 +1,7 @@
 # About the project
 Watchlistr is lightweight web app that allows you to easily keep track of the movies and shows you want to watch and where you can watch them.
 
-![image](https://github.com/user-attachments/assets/996196a4-aa8b-4848-a4ad-47223222ff3c)
+![Screenshot 2024-12-11 120024](https://github.com/user-attachments/assets/93312e8b-1e58-49ab-b7a8-d8b448526005)
 
 Live link: https://mywatchlistr.netlify.app
 
@@ -18,6 +18,11 @@ Live link: https://mywatchlistr.netlify.app
 - Add user ratings and comments
 - View media details including image, genres, streaming platform, description, cast members, user rating, and user comments
 - Search watchlist by title and description
+
+### Mobile Screenshots
+| ![Apple iPhone 11 Pro Max Screenshot 0](https://github.com/user-attachments/assets/b95ad4ee-6088-4a8e-88d6-82babce19d93) | ![Apple iPhone 11 Pro Max Screenshot 1](https://github.com/user-attachments/assets/c9a52e74-fee2-448c-a8fc-4d278cadab8f) | ![Apple iPhone 11 Pro Max Screenshot 2](https://github.com/user-attachments/assets/cccf3523-6b6f-49ce-a60f-578fcec2a7de) |
+|---|---|---|
+| ![Apple iPhone 11 Pro Max Screenshot 3](https://github.com/user-attachments/assets/829fad7d-3313-45fb-9641-213e9720093f) | ![Apple iPhone 11 Pro Max Screenshot 4](https://github.com/user-attachments/assets/c741308c-762f-4fa5-baff-da6312ffa0da) | ![Apple iPhone 11 Pro Max Screenshot 6](https://github.com/user-attachments/assets/06e55f86-a1bd-4ff3-b1e2-d44b4a393794) |
 
 ## Planning
 - [ERD](https://dbdiagram.io/d/watchlistr-663fb2c39e85a46d5595ec59)
